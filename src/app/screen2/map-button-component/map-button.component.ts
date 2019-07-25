@@ -11,6 +11,7 @@ import { Screen2Service } from '../service/screen2.service';
   styleUrls: ['./map-button.component.scss']
 })
 export class MapButtonComponent implements OnInit {
+  @Input() dataMapDialog
   id: string;
   image: string;
   name: string;
@@ -25,7 +26,7 @@ export class MapButtonComponent implements OnInit {
       disableClose: true,
       width: '80vh',
       height: "auto",
-      data: {id: this.id, name: this.name, imgage: this.image}
+      data: {id: this.id, name: this.name, image: this.image}
     });
 
     dialogRef.afterClosed().subscribe(result => {
