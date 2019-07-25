@@ -1,0 +1,34 @@
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #d4d4d4;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #a29e9e;
+    background-color: #f3f3f3;
+}
+
+body {
+    line-height: 1.7;
+    color: gray;
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+::-moz-selection,
+::selection {
+    background: #000;
+    color: #fff;
+}
+
+a {
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+a:hover {
+    text-decoration: none;
+}

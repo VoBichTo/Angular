@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="container-fluid">
+        <div class="row" id="center">
+            <app-map-button-component class="col-sm-3 col-md-3 col-lg-3 col-sx-3"></app-map-button-component>
+            <!-- <app-date-time-component class="col-sm-3 col-md-3 col-lg-3 col-sx-3"></app-date-time-component> -->
+            <div class="col-sm-3 col-md-3 col-lg-3 col-sx-3">
+                <div class="row" [formGroup]="formGroup">
+                    <app-date-time-component formControlName="activeEndDate" name="activeEndDate"></app-date-time-component>
+                </div>
+            </div>
+            <app-duration-component class="col-sm-3 col-md-3 col-lg-3 col-sx-3"></app-duration-component>
+            <app-search-button-component class="col-sm-3 col-md-3 col-lg-3 col-sx-3"></app-search-button-component>
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <div class="row" id="center">
+            <app-map-detail-component class="col-sm-3 col-md-3 col-lg-3 col-sx-3"></app-map-detail-component>
+            <app-image-multiple-component class="col-sm-3 col-md-3 col-lg-3 col-sx-3"></app-image-multiple-component>
+            <app-image-list-component class="col-sm-3 col-md-3 col-lg-3 col-sx-3"></app-image-list-component>
+            <app-image-detail-component class="col-sm-3 col-md-3 col-lg-3 col-sx-3"></app-image-detail-component>
+        </div>
+    </div>
+</div>
