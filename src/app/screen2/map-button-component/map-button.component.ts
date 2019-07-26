@@ -3,6 +3,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { MatTableDataSource } from '@angular/material/typings/public-api';
 import { MapDialog } from 'src/app/screen2/map-button-component/map-dialog.component';
 import { Screen2Service } from '../service/screen2.service';
+import FLOOR from '../../shared/core/data/floor';
 
 // @Input()
 @Component({
@@ -11,12 +12,17 @@ import { Screen2Service } from '../service/screen2.service';
   styleUrls: ['./map-button.component.scss']
 })
 export class MapButtonComponent implements OnInit {
-  @Input() dataMapDialog
+  // @Input() dataMapDialog
   id: string;
   image: string;
   name: string;
   dataMapDetail : string;
-  constructor(public dialog: MatDialog, private commModel: Screen2Service) { }
+  dataShowDialog = [] as any;
+  dataMapDialog = FLOOR;
+  constructor(public dialog: MatDialog, private commModel: Screen2Service) {
+    this.dataShowDialog = this.dataMapDialog;
+    // console.log(this.dataShowDialog);
+   }
   openDialog(): void {
     // this.commModel.openDialog().subscribe(temp =>      {
     //   console.log("datadasaaa" , temp);
@@ -26,13 +32,13 @@ export class MapButtonComponent implements OnInit {
       disableClose: true,
       width: '80vw',
       height: "80vh",
-      data: {id: this.id, name: this.name, image: this.image}
+      data: {dataKey : this.dataShowDialog}
+      
     });
-
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       // console.log('Ththis.img', result);
-      // console.log('Ththis.imgsadsa' , result.name);
+      // console.log('Ththis.imgsadsa' , result);
       this.id = result.id;
       this.image = result.image;
       this.name = result.name;

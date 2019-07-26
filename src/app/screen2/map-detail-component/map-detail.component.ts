@@ -12,19 +12,19 @@ import CAMERA from '../../shared/core/data/camera';
 })
 export class MapDetailComponent implements OnInit {
   image : string;
-  imageDetailFloor : string;
-  imageMapDetail : string;
   selected : number = -1;
   data = [];
   dataCamera = CAMERA;
-  constructor(public dialog: MatDialog, private commomModelService: Screen2Service) {
+  constructor(public dialog: MatDialog, private commModel: Screen2Service) {
     this.data = this.dataCamera;
    }
   ngOnInit() {
-   this.commomModelService.currentData.subscribe( image => this.image = image)
+    // Not understand when change name of image to differenct name
+    // It's not active
+   this.commModel.currentData.subscribe( imageDetailFloor => this.image = imageDetailFloor)
   }
   setDataForMapDialog(id){
-    this.commomModelService.changeImageMultiple(id);
+    this.commModel.changeImageMultiple(id);
     this.selected = id;
   }
 }
