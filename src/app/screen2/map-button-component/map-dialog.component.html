@@ -2,6 +2,11 @@
     <mat-tab-group dynamicHeight>
         <mat-tab label="Floor 1">
             <div class="example-large-box mat-elevation-z4" id="picture">
+                <ul style="list-style: none;">
+                    <li *ngFor="let item of data">
+                        <a (click)="setDataForMapDialog(item.image)"><img [ngClass]="{'hightligh' : selected == item.image}" [ngStyle]="item.position" [src]="item.camera"></a>
+                    </li>
+                </ul>
                 <img [src]="temp.image" width="auto" height="100%">
             </div>
         </mat-tab>
@@ -16,3 +21,24 @@
         <button mat-button [mat-dialog-close]="data" (click)="saveMessage()" cdkFocusInitial>Ok</button>
     </div>
 </div>
+
+
+
+<!-- <div mat-dialog-content>
+    <mat-tab-group dynamicHeight>
+        <mat-tab label="Floor 1">
+            <div class="example-large-box mat-elevation-z4" id="picture">
+                <img [src]="temp.image" width="auto" height="100%">
+            </div>
+        </mat-tab>
+        <mat-tab label="Floor 2">
+            <div class="example-large-box mat-elevation-z4">
+                Content
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    <div mat-dialog-actions>
+        <button mat-button (click)="closeDialog()">Cancel</button>
+        <button mat-button [mat-dialog-close]="data" (click)="saveMessage()" cdkFocusInitial>Ok</button>
+    </div>
+</div> -->

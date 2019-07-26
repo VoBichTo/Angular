@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import DialogData from '../../shared/core/inteface/dialog';
-const ITEM: DialogData = [
+import Floor from '../../shared/core/inteface/floor';
+const ITEM: Floor = [
   {id : '1', image: 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2017/05/b01.png'},
   {id : '2', image: 'https://tchol.org/images600_/2016-honda-civic-png-1.png'},
   {id : '3', image: 'https://tchol.org/images600_/harley-davidson-motorcycle-png.png'},

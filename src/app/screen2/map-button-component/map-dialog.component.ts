@@ -2,8 +2,9 @@ import { Component, OnInit, Inject, Output, EventEmitter, Input } from '@angular
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, DialogRole, MatDialogModule} from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/typings/public-api';
 import { Screen2Service } from '../service/screen2.service';
-import DialogData from '../../shared/core/inteface/dialog';
 import { Camera } from '../../shared/core/inteface/camera';
+import CAMERA from '../../shared/core/data/camera';
+import Floor from '../../shared/core/inteface/floor';
 
 
 @Component({
@@ -15,6 +16,9 @@ import { Camera } from '../../shared/core/inteface/camera';
   export class MapDialog {
     @Input() dataMapDialog;
     imageDetailFloor : string;
+    dataCamera = CAMERA;
+    data = [];
+    selected : number = -1;    
     IMAGE: Object = [
         {floor1 : "https://yamaha-motor.com.vn/wp/wp-content/uploads/2017/05/b01.png"},
         {floor2 : "https://tchol.org/images600_/2016-honda-civic-png-1.png"},
@@ -23,12 +27,13 @@ import { Camera } from '../../shared/core/inteface/camera';
         {floor5 : "https://tchol.org/images600_/png-bike-9.png"},
         {floor6 : "https://tchol.org/images600_/png-bike-2.png"},
       ];
-    // imgMap = [];
-    temp: DialogData = {id: "1", image: this.IMAGE[0].floor1};
+    temp: Floor = {id: "1", image: this.IMAGE[0].floor1};
     constructor(
       public dialogRef: MatDialogRef<MapDialog>,
-      private commomModel : Screen2Service,
-      @Inject(MAT_DIALOG_DATA) temp){}
+      private commomModelService : Screen2Service,
+      @Inject(MAT_DIALOG_DATA) temp){
+        this.data = this.dataCamera;
+      }
       
       closeDialog(): void {
       this.dialogRef.close();
@@ -36,28 +41,13 @@ import { Camera } from '../../shared/core/inteface/camera';
 
     saveMessage() {
         this.dialogRef.close(this.temp);
-        this.commomModel.changeDataMapDetail(this.temp.image);
+        this.commomModelService.changeDataMapDetail(this.temp.image);
       }
       ngOnInit(){
-        this.commomModel.currentData.subscribe( imageDetailFloor => this.imageDetailFloor = imageDetailFloor)
+        this.commomModelService.currentData.subscribe( imageDetailFloor => this.imageDetailFloor = imageDetailFloor)
       }
-  }
-  //Style for camera
-function setMyClasses() {
-  const CAMERA: Camera[] = 
-    [
-      {
-        id : '1',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Number13.png',
-        camera: 'https://images.vexels.com/media/users/3/130358/isolated/preview/cbf8a4bf99f5c1687ba00adb5a9721a3-flat-video-camera-icon-by-vexels.png'},
-        
-      {
-        id : '2',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZGbRs3hlZQmyeMhKwrzMsBJALr55loynODkxgz-lTXAeqRJA',
-        camera: 'https://images.vexels.com/media/users/3/130358/isolated/preview/cbf8a4bf99f5c1687ba00adb5a9721a3-flat-video-camera-icon-by-vexels.png'},
-      {
-        id : '3', 
-        image: 'https://banner2.kisspng.com/20180329/ffq/kisspng-number-haku-clip-art-number-1-5abc7083030507.7835562015222990110124.jpg', 
-        camera : 'https://images.vexels.com/media/users/3/130358/isolated/preview/cbf8a4bf99f5c1687ba00adb5a9721a3-flat-video-camera-icon-by-vexels.png'}
-    ] as any; 
-  }
+      // setDataForMapDialog(id){
+      //   this.commomModel.changeImageMultiple(id);
+      //   this.selected = id;
+      // }
+    }

@@ -17,5 +17,4 @@ export class Screen1Component implements OnInit {
 
   ngOnInit() {
   }
- 
 }

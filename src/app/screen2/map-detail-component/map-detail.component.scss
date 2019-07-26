@@ -6,36 +6,6 @@
     background-size: cover;
 }
 
-ul li .btn-camera-1 {
-    width: 25px;
-    height: 30px;
-    position: absolute;
-    margin-top: 100px;
-    margin-left: 20px;
-    z-index: 10000;
-    object-fit: contain;
-}
-
-.btn-camera-2 {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    margin-top: 155px;
-    margin-left: 50px;
-    z-index: 10000;
-    object-fit: contain;
-}
-
-.btn-camera-3 {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    margin-top: 75px;
-    margin-left: 80px;
-    z-index: 10000;
-    object-fit: contain;
-}
-
 .image-map-detail {
     position: initial;
     z-index: -99999;
@@ -68,4 +38,8 @@ ul li .btn-camera-1 {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
     cursor: pointer;
+}
+
+.hightligh {
+    background-color: rgb(80, 33, 0)
 }

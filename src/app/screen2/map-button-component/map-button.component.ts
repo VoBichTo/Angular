@@ -24,15 +24,15 @@ export class MapButtonComponent implements OnInit {
 
     const dialogRef = this.dialog.open(MapDialog, {
       disableClose: true,
-      width: '80vh',
-      height: "auto",
+      width: '80vw',
+      height: "80vh",
       data: {id: this.id, name: this.name, image: this.image}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      console.log('Ththis.img', result);
-      console.log('Ththis.imgsadsa' , result.name);
+      // console.log('Ththis.img', result);
+      // console.log('Ththis.imgsadsa' , result.name);
       this.id = result.id;
       this.image = result.image;
       this.name = result.name;

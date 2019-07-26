@@ -4,13 +4,9 @@
             <div class="hoverIMG">
                 <ul style="list-style: none;">
                     <li *ngFor="let item of data">
-                        <a (click)="setDataForMapDialog()"><img class="btn-camera-1" [src]="item.camera"></a>
-                        <a hidden>{{item.id}}</a>
-                        <!-- <img [src]="item.camera"> -->
+                        <a (click)="setDataForMapDialog(item.image)"><img [ngClass]="{'hightligh' : selected == item.image}" [ngStyle]="item.position" [src]="item.camera"></a>
                     </li>
                 </ul>
-                <!-- <a (click)="setDataForMapDialog()"><img class="btn-camera-2" src="../../../assets/images/camera-red.png"></a>
-                <a (click)="setDataForMapDialog()"><img class="btn-camera-3" src="../../../assets/images/camera-red.png"></a> -->
                 <img mat-card-image [src]="image">
             </div>
         </div>
