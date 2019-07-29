@@ -1,7 +1,15 @@
-<div class="card">
+<div class="card" style="position: relative;">
     <mat-card class="detail-map" id="height-card-detailmap">
         <div *ngIf="imageMapDetail">
-            <img mat-card-image [src]="imageMapDetail">
+            <canvas id="canvas-image-mul" style="
+            border: 1px solid;
+            width: 50px;
+            height: 50px;
+            top: 25%;
+            left: 35%;
+            position: absolute;
+        "></canvas>
+            <img mat-card-image [src]=" imageMapDetail ">
         </div>
     </mat-card>
 </div>

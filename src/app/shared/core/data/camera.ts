@@ -1,7 +1,7 @@
 const CAMERA = [
     {
       id : '1',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Number13.png', 
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOCartrqkqcVAtvgLtrV9p_6bvHHTtjr_uWG-Etno5TLurcqOZ',
       camera: '../../../../assets/images/cam.png',
       // camera : 'https://cdn4.iconfinder.com/data/icons/devices-28/32/131-01-512.png',
       position : {
@@ -14,7 +14,7 @@ const CAMERA = [
     },
     {
       id : '2',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZGbRs3hlZQmyeMhKwrzMsBJALr55loynODkxgz-lTXAeqRJA',
+      image: 'http://www.shawnachor.com/wp-content/uploads/2013/03/family.happy_.jpg',
       // camera: 'https://cdn4.iconfinder.com/data/icons/devices-28/32/131-01-512.png',
       camera: '../../../../assets/images/cam.png',
       position:{
