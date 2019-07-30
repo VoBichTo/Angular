@@ -4,7 +4,6 @@ import { MapDialog } from '../map-button-component/map-dialog.component';
 import { Screen2Service } from '../service/screen2.service';
 import CAMERA from '../../shared/core/data/camera';
 
-
 @Component({
   selector: 'app-map-detail-component',
   templateUrl: './map-detail.component.html',
@@ -13,7 +12,7 @@ import CAMERA from '../../shared/core/data/camera';
 export class MapDetailComponent implements OnInit {
   image : string;
   selected : number = -1;
-  data = [];
+  data = [] as any;
   dataCamera = CAMERA;
   constructor(public dialog: MatDialog, private commModel: Screen2Service) {
     this.data = this.dataCamera;

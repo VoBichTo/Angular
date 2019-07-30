@@ -1,4 +1,6 @@
-const CAMERA = [
+import { Camera } from '../inteface/camera';
+
+const CAMERA:Camera = [
     {
       id : '1',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOCartrqkqcVAtvgLtrV9p_6bvHHTtjr_uWG-Etno5TLurcqOZ',

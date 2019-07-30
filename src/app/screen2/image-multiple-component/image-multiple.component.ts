@@ -22,3 +22,4 @@ export class ImageMultipleComponent implements OnInit {
     this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
   }
 }
+  

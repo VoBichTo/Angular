@@ -1,4 +1,6 @@
-const USERDATA = [
+import { UserData } from '../inteface/user';
+
+const USERDATA:UserData = [
     {id: 1, name: 'Neon',country : 'Vietnam', progress: "In 2015, BMWs ced.", img: '../../../../assets/images/transparent.png'},
     {id: 2, name: 'Neon',country : 'Vietnam', progress: "In 2015, BMWs ced.", img: '../../../../assets/images/motorcycle.png'},
     {id: 3, name: 'Neon',country : 'Vietnam', progress: "In 2015, BMWs ced.", img: '../../../../assets/images/moto-2.png'},

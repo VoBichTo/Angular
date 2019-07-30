@@ -1,5 +1,7 @@
 #picture {
     text-align: center;
+    margin-left: 50vh;
+    object-fit: contain;
 }
 
 .example-large-box {
@@ -18,4 +20,18 @@
 
 .mat-dialog-content {
     overflow: hidden;
+    display: inline;
+}
+
+.mat-dialog-actions {
+    padding: 8px 0;
+    display: unset;
+    flex-wrap: wrap;
+    min-height: 52px;
+    align-items: center;
+    margin-bottom: -24px;
+}
+
+.absolute-img-icon {
+    position: absolute;
 }

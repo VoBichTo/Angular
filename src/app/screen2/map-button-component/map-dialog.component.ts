@@ -18,13 +18,15 @@ import { stringify } from '@angular/compiler/src/util';
     @Input() dataMapDialog;
     // imageDetailFloor : string;
     dataCamera = CAMERA;
-    data = [];
+    data = [] as any;
     selected : number = -1;
     temp = FLOOR;
     constructor(
       public dialogRef: MatDialogRef<MapDialog>,
       private commomModelService : Screen2Service,
-      @Inject(MAT_DIALOG_DATA) temp){}
+      @Inject(MAT_DIALOG_DATA) temp){
+        this.data = this.dataCamera;
+      }
       
       closeDialog(): void {
       this.dialogRef.close();

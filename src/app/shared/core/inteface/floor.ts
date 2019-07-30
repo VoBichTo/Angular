@@ -4,5 +4,7 @@
     name: string;
     image: string;
     camera: string;
-    position: {}   
+    position1: {},
+    position2:{},
+    position3:{}  
   }
